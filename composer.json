@@ -1,0 +1,43 @@
+{
+  "name": "disitec/laravel-dni-validator",
+  "description": "Spanish DNI / NIF / CIF validator for Laravel",
+  "keywords": [
+    "dni",
+    "nif",
+    "cif",
+    "validator",
+    "laravel"
+  ],
+  "homepage": "https://github.com/disitec/laravel-dni-validator",
+  "authors": [
+    {
+      "name": "F. Javier Martínez",
+      "email": "fjmartinez@disitec.es"
+    }
+  ],
+  "require": {
+    "illuminate/support": "5.5.*|5.6.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "6.0.*|7.0.*",
+    "orchestra/testbench": "3.5.*|3.6.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Disitec\\DniValidator\\": "src/DniValidator"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Disitec\\DniValidator\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Disitec\\DniValidator\\DisitecServiceProvider"
+      ]
+    }
+  },
+  "license": "MIT"
+}
