@@ -22,6 +22,10 @@ class ValidateDni
             return ($num[8] == substr('TRWAGMYFPDXBNJZSQVHLCKE', substr($cif, 0, 8) % 23, 1));
         }
 
+        if (preg_match('/^[XYZ]{1}/', $cif)) {
+            return ($num[8] == substr('TRWAGMYFPDXBNJZSQVHLCKE', substr(str_replace(array('X','Y','Z'), array('0','1','2'), $cif), 0, 8) % 23, 1));
+        }
+
         $suma = $num[2] + $num[4] + $num[6];
         for ($i = 1; $i < 8; $i += 2)
         {
@@ -37,11 +41,6 @@ class ValidateDni
         // CIFs
         if (preg_match('/^[ABCDEFGHJNPQRSUVW]{1}/', $cif)) {
             return ($num[8] == chr(64 + $n) || $num[8] == substr($n, strlen($n) - 1, 1));
-        }
-
-        if (preg_match('/^[XYZ]{1}/', $cif)) {
-            return ($num[8] == substr('TRWAGMYFPDXBNJZSQVHLCKE', substr(str_replace(array('X','Y','Z'), array('0','1','2'), $cif), 0, 8) % 23, 1));
-
         }
 
         return false;

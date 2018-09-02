@@ -35,7 +35,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Disitec\\DniValidator\\DisitecServiceProvider"
+        "Disitec\\DniValidator\\DniValidatorServiceProvider"
       ]
     }
   },
