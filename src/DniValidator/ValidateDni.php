@@ -4,8 +4,8 @@ namespace Disitec\DniValidator;
 
 class ValidateDni
 {
-    public static function check_dni($cif){
-
+    public static function check_dni($cif)
+    {
         $cif = strtoupper($cif);
 
         for ($i = 0; $i < 9; $i ++) {
@@ -27,9 +27,8 @@ class ValidateDni
         }
 
         $suma = $num[2] + $num[4] + $num[6];
-        for ($i = 1; $i < 8; $i += 2)
-        {
-            $suma += substr((2 * $num[$i]),0,1) + substr((2 * $num[$i]), 1, 1);
+        for ($i = 1; $i < 8; $i += 2) {
+            $suma += array_sum(str_split(2 * $num[$i]));
         }
         $n = 10 - substr($suma, strlen($suma) - 1, 1);
 
